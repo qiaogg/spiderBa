@@ -2,7 +2,8 @@
     <div id="Main">
         <div class="content">
             <el-input class="content-url" v-model="url" clearable></el-input>
-            <!-- <el-button @click="fun">提交</el-button> -->
+            <el-button @click="fun">提交</el-button>
+            <p>2323jfkljaslfjkl</p>
             <iframe class="iframe" :src="url"></iframe>
         </div>
     </div>
@@ -15,24 +16,22 @@ export default {
         }
     },
     mounted() {
-        this.$nextTick( ()=>{
+        this.$nextTick(function() {
             this.getUrl(1);
             // this.getText(1)
         });
     },
 
-    mounted () {
-        window.addEventListener('mouseup',this.handleMouseup)
-    },
+    // mounted () {
+    //     window.addEventListener('mouseup',this.handleMouseup)
+    // },
     methods: {
         getUrl() {
+            console.log(33)
             this.url = this.$route.params.search;
         },
         handleMouseup() {
             var iframe = document.getElementsByClassName("iframe");
-            console.log(333)
-            console.log(32323)
-            console.log(iframe.contentWindow)
         }
     }
 }
